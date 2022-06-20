@@ -1,0 +1,39 @@
+Create 		Settings | Variables | Test Case | Keywords 
+
+In settings --> insert 
+< Library Seleniumlibrary > 
+ 
+In variables --> Main aim of variables is to store chrome path in " chrome " keyword.  
+Same as store the url of website we want to open in " URL ". 
+ 
+In Testcases --> 
+		Store all actions you want to perform on website in SECTION. 
+		
+In Keywords --> If the testcase is being repeated again and again then you can store entire testcase in keyword -- " loginintoapplication "
+		So we are running entire script through one keyword --> " loginintoapplication "	 
+
+
+
+
+
+
+
+*** Settings ***               
+Library  SeleniumLibrary
+
+*** Variables ***
+${browser}  chrome
+${url}  https://demo.nopcommerce.com/
+
+*** Test Cases ***
+LoginTest
+    open browser    ${url}  ${browser}
+    loginintoapplication
+    close browser
+
+*** Keywords ***
+loginintoapplication
+    click link  //a[normalize-space()='Log in']
+    input text  id:Email    pavanoltraining@gmail.com
+    input text  id:Password Test@123
+    click element   //button[normalize-space()='Log in']
