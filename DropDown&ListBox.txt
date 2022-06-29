@@ -1,0 +1,62 @@
+Create --> PRE-REQUISITIES 	
+	Settings | Variables | Test Case | Keywords 
+
+In settings --> insert 
+< Library Seleniumlibrary > 
+ 
+In variables --> Main aim of variables is to store chrome path in " chrome " keyword ${browser}.  
+Same as store the url of website we want to open in " URL ". 
+
+In keywords --> Write entire sequence of actions we want to perform in this section. 
+		< Use it in Test Cases Section with just typing single keyword >
+                ----------------------------------------------------------------
+
+
+CODE: 
+*** Settings ***
+Library     SeleniumLibrary
+
+*** Variables ***
+${browser}      chrome
+${url}  http://www.practiceselenium.com/practice-form.html
+
+*** Test Cases ***
+open browser ${url} ${browser}
+maximize browser window
+Testing Dropdown&Listbox
+close browser
+
+
+*** Keywords ***
+Testing Dropdown&Listbox
+
+# Handling Drop Down
+    #NOTE: (In drop down we can select weblement through 3 WAYS)
+    #1 select from list by <<< label >>>        -- MOST PREFERED
+    #2 select from list by <<< index >>>
+    #3 select from list by <<< value >>>
+
+    select from list by label   continents  Asia        # Asia = label
+    sleep   5
+    select from list by index   continents  5           # Index = 5
+
+# Handling List Boxes
+    select from list by label   selenium_commands   Switch Commands     # Switch Commands = label
+    sleep   5
+    select from list by label   selenium_commands   WebElement Commands     #Web Elements Commands = label
+
+    unselect from list by label     selenium_commands Switch Commands
+
+
+
+NOTE: <<<<< List Boxes and Drop down Elements have same method to call web elements in Selenium Robot Framework,
+	   
+	    Both Concept uses following commands: select from list by label	value(of attribute)	visibletxt(label)
+						  select from list by index 	value(of attribute)	index starts from (0 to number of elements)
+						  select from list by value     value(of attribute)	value(is mentioned mostly in HTML CODE.)
+
+***********************************************************************************************************************************************************
+ADVANTAGE OVER SELENIUM: We dont have to write entire scripts to locate element and call them, over in robot framework with selenium we have 
+		 	 to just write keywords to execute entire script but we dont have to write scripts like selenium. 
+***********************************************************************************************************************************************************
+ 

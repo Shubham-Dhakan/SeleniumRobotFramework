@@ -1,0 +1,53 @@
+Create --> PRE-REQUISITIES 	
+	Settings | Variables | Test Case | Keywords 
+
+In settings --> insert 
+< Library Seleniumlibrary > 
+ 
+In variables --> Main aim of variables is to store chrome path in " chrome " keyword ${browser}.  
+Same as store the url of website we want to open in " URL ". 
+
+In keywords --> Write entire sequence of actions we want to perform in this section. 
+		< Use it in Test Cases Section with just typing single keyword >
+                ----------------------------------------------------------------
+
+CODE: 
+*** Settings *** 
+Library		SeleniumLibrary
+
+*** Variables ***
+${browser}	chrome
+${url}		
+
+*** Test Cases ***
+
+open browser	${url}	${url}
+maximize browser window 
+${time} = get selenium timeout
+log to console	${time}
+
+# Handling Timeouts --> default selenium timeout time -- << 5 seconds >>
+Testing timeout concept
+	set selenium timeout	10	seconds			#<<< over here we hardcoding the timeout value to 10 seconds >>>
+	wait until page contains Registration 			#<<< Selenium Robot framework defaulty will wait for 5 seconds but because of hardcoded value
+								    it will wait 10 seconds >>>
+
+	select radio button	Gender	M
+	input box	name:FirstName	abc
+	input box	name:LastName	xyz
+	input box	name:Email	abc@gmail.com
+	input box	name:Password	cde
+	input box 	name:ConfirmPassword	cde
+close browser
+*** Keywords ***
+Testing timeout concept
+	set selenium timeout	10	seconds			#<<< over here we hardcoding the timeout value to 10 seconds >>>
+	wait until page contains Registration 			#<<< Selenium Robot framework defaulty will wait for 5 seconds but because of hardcoded value
+								    it will wait 10 seconds >>>
+
+	select radio button	Gender	M
+	input box	name:FirstName	abc
+	input box	name:LastName	xyz
+	input box	name:Email	abc@gmail.com
+	input box	name:Password	cde
+	input box 	name:ConfirmPassword	cde
