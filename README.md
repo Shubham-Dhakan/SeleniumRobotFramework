@@ -4,3 +4,4 @@
 3. Wait Concept _ RobotFramework
 4. Timeoutconcept - RobotFramework
 5. Dropdown & List Element Concept - RobotFramework
+6. Implicit wait Concept - RobotFramework
