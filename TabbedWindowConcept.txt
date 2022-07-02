@@ -1,0 +1,36 @@
+Create --> PRE-REQUISITIES 	
+	Settings | Variables | Test Case | Keywords 
+
+In settings --> insert 
+< Library Seleniumlibrary > 
+ 
+In variables --> Main aim of variables is to store chrome path in " chrome " keyword ${browser}.  
+Same as store the url of website we want to open in " URL ". 
+
+In keywords --> Write entire sequence of actions we want to perform in this section. 
+		< Use it in Test Cases Section with just typing single keyword >
+                ----------------------------------------------------------------
+
+*** Settings ***
+Library  SeleniumLibrary
+
+*** Variables ***
+${browser}      chrome
+${url}          http://demo.automationtesting.in/Windows.html
+
+*** Test Cases ***
+open browser        ${url}  ${browser}
+Handling Tab Window				# Entire code is written in *** Keyword *** Section 
+
+close browser
+#close all browser      #this will close all browser which are open
+
+*** Keywords ***
+Handling Tab Window
+    click element       xpath://a[@href='http://www.selenium.dev']//button[@class='btn btn-info'][normalize-space()='click']
+
+    # handling tabbed windows concept:
+    select window       Frames & windows        # <<< select window >>> is keyword to open new tab window
+                                                # in select window --> we can use title, url or name to
+                                                # open new tabbed window.
+    click element       xpath://a[@class='selenium-button selenium-webdriver text-uppercase font-weight-bold']
