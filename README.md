@@ -9,4 +9,4 @@
 8. TabbedWindows Concept - RobotFramework
 9. Switchtomultiplebrowser - RobotFramework
 10. CaptureScreenShot - RobotFramework
-11. Mouse Actions - RobotFramework
+11. Mouse Actions - RobotFramework  (Double Click | Right Click | Drag and Drop)
