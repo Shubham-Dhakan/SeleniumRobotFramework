@@ -11,3 +11,4 @@
 10. CaptureScreenShot - RobotFramework
 11. Mouse Actions - RobotFramework  (Double Click | Right Click | Drag and Drop)
 12. User Defined Keywords - RobotFramework 
+13. Page Scrolling Concept - RobotFramework (With Pixels | Till Element Visible | Bottom to Top)
