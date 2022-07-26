@@ -13,3 +13,4 @@
 12. User Defined Keywords - RobotFramework 
 13. Page Scrolling Concept - RobotFramework (With Pixels | Till Element Visible | Bottom to Top)
 14. Get All Links Concept - RobotFramework  
+15. HTML table - RobotFramework (Brief example of how to work with tables) 
